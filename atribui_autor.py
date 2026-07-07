@@ -11,122 +11,136 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
         with open(caminho_txt, "r", encoding="cp1252") as f:
             texto_completo = f.read()
 
-    # 2. Lista de títulos exatos para o teste (adicione outros conforme desejar)
-    # Escreva exatamente como aparecem no livro
+    # 2. Lista de títulos exatos para o teste
+
+    #-=~=~LEMBRAR DE ESCREVER ALGO ANTES DO PRIMEIRO TITULO SENAO BUGA E NAO PEGA=~=~-
+
+
     titulos_alvo = [
-"NAPOLEÃO",
-        "SONETO",
-        "ILUSÃO",
-        "DEIXA-ME!",
-        "O VIZIR",
-        "NÃO TE ESQUEÇAS DE MIM!",
-        "SONETO",
-        "ELEGIA",
-        "O EXILADO",
-        "AURORA",
-        "AS SELVAS",
-        "À LUCÍLA",
-        "CHILDE-HAROLD",
-        "O SABIÁ",
-        "ESTÂNCIAS",
-        "O MAR",
-        "A TRISTEZA",
-        "O ESTANDARTE AURIVERDE",
-        "CANTO DO SERTANEJO",
-        "AVE! MARIA!",
-        "VOZ DO POETA",
-        "SALMO I",
-        "INVOCAÇÃO",
-        "CANTO",
-        "ARMAS",
-        "I",
-        "II",
-        "III",
-        "IV",
-        "V",
-        "VI",
-        "VII",
-        "VIII",
-        "IX",
-        "X",
-        "CISMAS À NOITE",
-        "SEXTILHAS",
-        "CÂNTICO DO CALVÁRIO",
-        "QUEIXAS DO POETA",
-        "RESIGNAÇÃO",
-        "PROTESTOS",
-        "DESENGANO",
-        "EM TODA A PARTE",
-        "NO ERMO",
-        "SETE DE SETEMBRO",
-        "O ESCRAVO",
-        "A CIDADE",
-        "AO RIO DE JANEIRO",
-        "A FLOR DO MARACUJÁ",
-        "A ROÇA",
-        "A CRIANÇA",
-        "EXPIAÇÃO",
-        "NOTURNO",
-        "NARRAÇÃO",
-        "EU AMO A NOITE",
-        "A VOLTA",
-        "A DESPEDIDA I",
-        "A DESPEDIDA II"
-        "CONFORTO",
-        "VISÕES DA NOITE",
-        "O CANTO DOS SABIÁS",
-        "O RESPLENDOR DO TRONO",
-        "EM VIAGEM",
-        "A SOMBRA",
-        "A LENDA DO AMAZONAS",
-        "ESTÂNCIAS",
-        "O ARREPENDIMENTO",
-        "ENOJO",
-        "O MESMO",
-        "A UM MONUMENTO",
+        "Beatrice",
+        "Pepa - I",
+        "Pepa - II",
+        "Pepa - III",
+        "Pepa - IV",
+        "Pepa - V",
+        "Pepa - VI",
+        "Pepa - VII",
+        "Pepa - VIII",
+        "Pepa - IX",
+        "Pepa - X",
+        "Pepa - XI",
+        "Pepa - XII",
+        "Pepa - XIII",
+        "Pepa - XIV",
+        "Pepa - XV",
+        "Pepa - XVI",
+        "Idílio Sonhado - I",
+        "Idílio Sonhado - II",
+        "Idílio Sonhado - III",
+        "Idílio Sonhado - IV",
+        "Maria - I",
+        "Maria - II",
+        "Maria - III",
+        "Maria - IV",
+        "Maria - V",
+        "Maria - VI",
+        "Maria - VII",
+        "Maria - VIII",
+        "Maria - IX",
+        "Maria - X",
+        "Maria - XI",
+        "Maria - XII",
+        "Maria - XIII",
+        "Maria - XIV",
+        "A GUITARRA - I",
+        "A GUITARRA - II",
+        "A GUITARRA - III",
+        "A GUITARRA - IV",
+        "A GUITARRA - V",
+        "A GUITARRA - VI",
+        "AO LUAR - I",
+        "AO LUAR - II",
+        "LIMOEIRO VERDE - I",
+        "LIMOEIRO VERDE - II",
+        "AMOR ALEGRE",
+        "Poesias Diversas - I",
+        "Poesias Diversas - II",
+        "Poesias Diversas - III",
+        "Poesias Diversas - IV",
+        "Poesias Diversas - V",
+        "Poesias Diversas - VI",
+        "Poesias Diversas - VII",
+        "Poesias Diversas - VIII",
+        "Poesias Diversas - IX",
+        "Poesias Diversas - X",
+        "Poesias Diversas - RESPOSTA",
+        "Poesias Diversas - XI",
+        "Poesias Diversas - XII",
+        "Poesias Diversas - XIII",
+        "Poesias Diversas - XIV",
+        "Poesias Diversas - XV",
+        "Poesias Diversas - XVI",
+        "Poesias Diversas - XVII",
+        "SAUDADES PAGÃS - I",
+        "SAUDADES PAGÃS - II",
+        "SAUDADES PAGÃS - III",
+        "SAUDADES PAGÃS - IV",
+        "SAUDADES PAGÃS - V",
+        "SAUDADES PAGÃS - VI",
+        "SAUDADES PAGÃS - VII",
     ]
 
-# 1. Cria a lista removendo as duplicatas
-    titulos_unicos = list(set(titulos_alvo))
+    # Cria a lista removendo as duplicatas mantendo a ordem para o relatório visual
+    titulos_unicos = []
+    for t in titulos_alvo:
+        t_limpo = t.strip()
+        if t_limpo and t_limpo not in titulos_unicos:
+            titulos_unicos.append(t_limpo)
     
-    # 2. Expressão regular corrigida usando 'titulos_unicos' e a variável 'p' correta
+    # Expressão regular corrigida usando 'titulos_unicos'
     padrao_busca = r"\n\s*(" + "|".join([r"\s+".join([re.escape(p) for p in t.split()]) for t in titulos_unicos]) + r")\s*\n"
     
     # Faz o corte preciso do texto com base nos títulos fornecidos
     partes = re.split(padrao_busca, texto_completo, flags=re.IGNORECASE)
     
     poemas_estruturados = []
+    titulos_encontrados_normalizados = set()
     
-    # O primeiro elemento (partes[0]) é o texto de introdução antes do primeiro poema, ignoramos.
+    # Extração dos poemas do resultado do split
     i = 1
     while i < len(partes) - 1:
         titulo = partes[i].strip()
         corpo = partes[i+1].strip()
         
-        # Limpezas no corpo do poema caso vazem notas finais
         if "FIM" in corpo:
             corpo = corpo.split("FIM")[0].strip()
             
-        poemas_estruturados.append([titulo.upper(), "Fagundes Varella", corpo])
+        poemas_estruturados.append([titulo.upper(), "Antero de Quental", corpo])
+        titulos_encontrados_normalizados.add(titulo.lower())
         i += 2
 
+    # --- Relatório de Verificação no Terminal ---
+    print("\n📊 --- RELATÓRIO DE TÍTULOS ---")
+    for t in titulos_unicos:
+        if t.lower() in titulos_encontrados_normalizados:
+            print(f"[✓] {t}")
+        else:
+            print(f"[X] {t}")
+    print("--------------------------------\n")
+
     # 3. Guardar o resultado final no formato CSV esperado
-    # O 'utf-8-sig' garante a acentuação perfeita para abrir direto no Excel
     with open(caminho_csv, mode='w', newline='', encoding='utf-8-sig') as f:
         escritor = csv.writer(f, delimiter=';', quoting=csv.QUOTE_MINIMAL)
         
-        # Cabeçalho do CSV
         escritor.writerow(['titulo', 'autor', 'texto'])
-        # Dados dos poemas
         escritor.writerows(poemas_estruturados)
 
-    print(f"\n✨ Sucesso! Foram extraídos {len(poemas_estruturados)} poemas com base nos títulos fornecidos.")
+    print(f"✨ Sucesso! Foram extraídos {len(poemas_estruturados)} poemas com base nos títulos fornecidos.")
     print(f"Ficheiro guardado em: '{caminho_csv}'")
 
 # --- Execução do Script ---
 ficheiro_entrada = "EU.txt"
-
-ficheiro_saida = "poemas_vagundes_varella.csv"
+ficheiro_saida = "poemas_antero_de_quental.csv"
 
 try:
     processar_txt_poemas(ficheiro_entrada, ficheiro_saida)
