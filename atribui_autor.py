@@ -17,62 +17,37 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
 
 
     titulos_alvo = [
-        "Antonio - I",
-"Antonio - II",
-"Menino e Moço - I",
-"Menino e Moço - II",
-"Os Cavalleiros - I",
-"Os Cavalleiros - II",
-"Purinha - I",
-"Purinha - II",
-"Elegia - I",
-"Elegia - II",
-"Os Sinos - I",
-"Os Sinos - II",
-"Terças-Feiras - I",
-"Terças-Feiras - II",
-"Carta a Manoel - I",
-"Carta a Manoel - II",
-"Para As Raparigas de Coimbra - I",
-"Para As Raparigas de Coimbra - II",
-"Luzitania no Bairro-Latino - I",
-"Luzitania no Bairro-Latino - II",
-"Os Figos Pretos - I",
-"Os Figos Pretos - II",
-"Febre Vermelha - I",
-"Febre Vermelha - II",
-"Poentes de França - I",
-"Poentes de França - II",
-"Pobre Tysica - I",
-"Pobre Tysica - II",
-"A Poezia do Outomno - I",
-"A Poezia do Outomno - II",
-"Enterro de Ophelia - I",
-"Enterro de Ophelia - II",
-"Ballada do Caixão - I",
-"Ballada do Caixão - II",
-"Á Toa - I",
-"Á Toa - II",
-"A Vida - I",
-"A Vida - II",
-"O Somno de João - I",
-"O Somno de João - II",
-"Ao Canto do Lume - I",
-"Ao Canto do Lume - II",
-"A Sombra - I",
-"A Sombra - II",
-"O Meu Cachimbo - I",
-"O Meu Cachimbo - II",
-"Ca (ro) Da (ta) Ver (mibus) - I",
-"Ca (ro) Da (ta) Ver (mibus) - II",
-"Quando Chegar a Hora - I",
-"Quando Chegar a Hora - II",
-"Certa Velhinha - I",
-"Certa Velhinha - II",
-"Males de Anto - I",
-"Males de Anto - II",
-"Ah Deixem-me Dormir! - I",
-"Ah Deixem-me Dormir! - II",
+"Initium",
+"A cabeça do corvo",
+"O cachimbo",
+"O leito",
+"Luar sobre a cruz da tua cova",
+"O lago",
+"Sete damas",
+"Presságios",
+"Meia-noite",
+"Canção",
+"Ocaso",
+"Saudade",
+"O campanário",
+"Ladainha dos quatro santos",
+"Náufrago",
+"Poeiras medievais",
+"Visão dos solitários",
+"Vedeta",
+"Espírito mau",
+"Sucubus",
+"Serpes",
+"Spectrum",
+"Santo Graal",
+"Recordando-se",
+"Pobres sonhos",
+"In hoc signo...",
+"Mors",
+"São Bom Jesus de Matosinhos",
+"A catedral",
+"Ossa mea",
+"Dies irae",
     ]
 
     # Cria a lista removendo as duplicatas mantendo a ordem para o relatório visual
@@ -100,7 +75,7 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
         if "FIM" in corpo:
             corpo = corpo.split("FIM")[0].strip()
             
-        poemas_estruturados.append([titulo.upper(), "Antônio Nobre", corpo])
+        poemas_estruturados.append([titulo.upper(), "Alphonsus Guimaraens", corpo])
         titulos_encontrados_normalizados.add(titulo.lower())
         i += 2
 
@@ -125,7 +100,7 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
 
 # --- Execução do Script ---
 ficheiro_entrada = "EU.txt"
-ficheiro_saida = "poemas_antônio_nobre.csv"
+ficheiro_saida = "poemas_alphonsus_guimaraens.csv"
 
 try:
     processar_txt_poemas(ficheiro_entrada, ficheiro_saida)
