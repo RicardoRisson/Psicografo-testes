@@ -17,37 +17,26 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
 
 
     titulos_alvo = [
-"Initium",
-"A cabeça do corvo",
-"O cachimbo",
-"O leito",
-"Luar sobre a cruz da tua cova",
-"O lago",
-"Sete damas",
-"Presságios",
-"Meia-noite",
-"Canção",
-"Ocaso",
-"Saudade",
-"O campanário",
-"Ladainha dos quatro santos",
-"Náufrago",
-"Poeiras medievais",
-"Visão dos solitários",
-"Vedeta",
-"Espírito mau",
-"Sucubus",
-"Serpes",
-"Spectrum",
-"Santo Graal",
-"Recordando-se",
-"Pobres sonhos",
-"In hoc signo...",
-"Mors",
-"São Bom Jesus de Matosinhos",
-"A catedral",
-"Ossa mea",
-"Dies irae",
+"PRELUDIO - I A CAMINHO P1",
+"PRELUDIO - I A CAMINHO P2",
+"PRELUDIO - II DE VOLTA P1",
+"PRELUDIO - II DE VOLTA P2",
+"A MOLEIRINHA - II CADAVER I P1",
+"A MOLEIRINHA - II CADAVER I P2",
+"A MOLEIRINHA - II IN PULVIS... P1",
+"A MOLEIRINHA - II IN PULVIS... P2",
+"A MOLEIRINHA - III EIRAS AO LUAR P1",
+"A MOLEIRINHA - III EIRAS AO LUAR P2",
+"A MOLEIRINHA - IV AS ERMIDAS P1",
+"A MOLEIRINHA - IV AS ERMIDAS P2",
+"CANÇÃO PERDIDA - VI O PASTOR P1",
+"CANÇÃO PERDIDA - VI O PASTOR P2",
+"CANÇÃO PERDIDA - VII O CAVADOR P1",
+"CANÇÃO PERDIDA - VII O CAVADOR P2",
+"CANÇÃO PERDIDA - VIII OS POBRESINHOS P1",
+"CANÇÃO PERDIDA - VIII OS POBRESINHOS P2",
+"CANÇÃO PERDIDA - IX CAMPO SANTO P1",
+"CANÇÃO PERDIDA - IX CAMPO SANTO P2",
     ]
 
     # Cria a lista removendo as duplicatas mantendo a ordem para o relatório visual
@@ -75,7 +64,7 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
         if "FIM" in corpo:
             corpo = corpo.split("FIM")[0].strip()
             
-        poemas_estruturados.append([titulo.upper(), "Alphonsus Guimaraens", corpo])
+        poemas_estruturados.append([titulo.upper(), "Guerra Junqueiro", corpo])
         titulos_encontrados_normalizados.add(titulo.lower())
         i += 2
 
@@ -100,7 +89,7 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
 
 # --- Execução do Script ---
 ficheiro_entrada = "EU.txt"
-ficheiro_saida = "poemas_alphonsus_guimaraens.csv"
+ficheiro_saida = "poemas_guerra_junqueiro.csv"
 
 try:
     processar_txt_poemas(ficheiro_entrada, ficheiro_saida)
