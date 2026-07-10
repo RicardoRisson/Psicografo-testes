@@ -17,71 +17,45 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
 
 
     titulos_alvo = [
-"A poesia",
-"A uma carta anonyma",
-"Duas rosas",
-"A uma mulher",
-"A D. Candida Nazareth",
-"Amor",
-"A donzella e o musgo",
-"Ultimo adeus",
-"Rosas",
-"Rosa e rosas",
-"A Hermann",
-"Presentimento",
-"Marina - I",
-"N'um album",
-"Beijo na face",
-"Resposta",
-"Flôr e borboleta",
-"Remoinho",
-"Fabula",
-"Boas noites",
-"Gaspar",
-"Carta",
-"Margarida",
-"No leito nupcial",
-"A minha mãi",
-"Beatriz",
-"Innocencia",
-"A Escriptura Sagrada",
-"A um Nuno",
-"A ***",
-"Luz da fé",
-"Resposta",
-"Ventura",
-"Arida palma",
-"A uns olhos azues",
-"Heresta",
-"Fragmento",
-"Se ao enlaçal-a no peito",
-"Dinheiro",
-"Duvida",
-"Caturras",
-"Foi-se-me pouco a pouco amortecendo",
-"Mãi e filho",
-"Toca a capello, vou vêl-o",
-"Não!",
-"Na folha d'um romance",
-"Descalça!",
-"Adeus!",
-"A Victoria Colonna",
-"N'um convento",
-"Sonho",
-"Á vista d'um retrato",
-"A lua",
-"Joven captiva",
-"Mulher! quando nos braços",
-"Um beijo",
-"Francisca de Rimini",
-"Paixão",
-"Malmequer",
-"Virginia",
-"Primeiro psalmo de David",
-"Segundo psalmo de David",
-"Cantico dos Canticos de Salomão",
-"Sonho",
-"Ouviste-me não sei quê",
+"BLOCO I",
+"BLOCO II",
+"BLOCO III",
+"BLOCO IV",
+"BLOCO V",
+"BLOCO VI",
+"BLOCO VII",
+"BLOCO VIII",
+"BLOCO IX",
+"BLOCO X",
+"BLOCO XI",
+"BLOCO XII",
+"BLOCO XIII",
+"BLOCO XIV",
+"BLOCO XV",
+"BLOCO XVI",
+"BLOCO XVII",
+"BLOCO XVIII",
+"BLOCO XIX",
+"BLOCO XX",
+"BLOCO XXI",
+"BLOCO XXII",
+"BLOCO XXIII",
+"BLOCO XXIV",
+"BLOCO XXV",
+"BLOCO XXVI",
+"BLOCO XXVII",
+"BLOCO XXVIII",
+"BLOCO XXIX",
+"BLOCO XXX",
+"BLOCO XXXI",
+"BLOCO XXXII",
+"BLOCO XXXIII",
+"BLOCO XXXIV",
+"BLOCO XXXV",
+"BLOCO XXXVI",
+"BLOCO XXXVII",
+"BLOCO XXXVIII",
+"BLOCO XXXIX",
     ]
 
     # Cria a lista removendo as duplicatas mantendo a ordem para o relatório visual
@@ -109,7 +83,7 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
         if "FIM" in corpo:
             corpo = corpo.split("FIM")[0].strip()
             
-        poemas_estruturados.append([titulo.upper(), "Joao de Deus", corpo])
+        poemas_estruturados.append([titulo.upper(), "José do Patrocínio", corpo])
         titulos_encontrados_normalizados.add(titulo.lower())
         i += 2
 
@@ -134,7 +108,7 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
 
 # --- Execução do Script ---
 ficheiro_entrada = "EU.txt"
-ficheiro_saida = "poemas_joao_de_deus.csv"
+ficheiro_saida = "retirantes_josé_do_atrocinio.csv"
 
 try:
     processar_txt_poemas(ficheiro_entrada, ficheiro_saida)
