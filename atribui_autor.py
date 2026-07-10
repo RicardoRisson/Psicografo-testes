@@ -17,26 +17,71 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
 
 
     titulos_alvo = [
-"PRELUDIO - I A CAMINHO P1",
-"PRELUDIO - I A CAMINHO P2",
-"PRELUDIO - II DE VOLTA P1",
-"PRELUDIO - II DE VOLTA P2",
-"A MOLEIRINHA - II CADAVER I P1",
-"A MOLEIRINHA - II CADAVER I P2",
-"A MOLEIRINHA - II IN PULVIS... P1",
-"A MOLEIRINHA - II IN PULVIS... P2",
-"A MOLEIRINHA - III EIRAS AO LUAR P1",
-"A MOLEIRINHA - III EIRAS AO LUAR P2",
-"A MOLEIRINHA - IV AS ERMIDAS P1",
-"A MOLEIRINHA - IV AS ERMIDAS P2",
-"CANÇÃO PERDIDA - VI O PASTOR P1",
-"CANÇÃO PERDIDA - VI O PASTOR P2",
-"CANÇÃO PERDIDA - VII O CAVADOR P1",
-"CANÇÃO PERDIDA - VII O CAVADOR P2",
-"CANÇÃO PERDIDA - VIII OS POBRESINHOS P1",
-"CANÇÃO PERDIDA - VIII OS POBRESINHOS P2",
-"CANÇÃO PERDIDA - IX CAMPO SANTO P1",
-"CANÇÃO PERDIDA - IX CAMPO SANTO P2",
+"A poesia",
+"A uma carta anonyma",
+"Duas rosas",
+"A uma mulher",
+"A D. Candida Nazareth",
+"Amor",
+"A donzella e o musgo",
+"Ultimo adeus",
+"Rosas",
+"Rosa e rosas",
+"A Hermann",
+"Presentimento",
+"Marina - I",
+"N'um album",
+"Beijo na face",
+"Resposta",
+"Flôr e borboleta",
+"Remoinho",
+"Fabula",
+"Boas noites",
+"Gaspar",
+"Carta",
+"Margarida",
+"No leito nupcial",
+"A minha mãi",
+"Beatriz",
+"Innocencia",
+"A Escriptura Sagrada",
+"A um Nuno",
+"A ***",
+"Luz da fé",
+"Resposta",
+"Ventura",
+"Arida palma",
+"A uns olhos azues",
+"Heresta",
+"Fragmento",
+"Se ao enlaçal-a no peito",
+"Dinheiro",
+"Duvida",
+"Caturras",
+"Foi-se-me pouco a pouco amortecendo",
+"Mãi e filho",
+"Toca a capello, vou vêl-o",
+"Não!",
+"Na folha d'um romance",
+"Descalça!",
+"Adeus!",
+"A Victoria Colonna",
+"N'um convento",
+"Sonho",
+"Á vista d'um retrato",
+"A lua",
+"Joven captiva",
+"Mulher! quando nos braços",
+"Um beijo",
+"Francisca de Rimini",
+"Paixão",
+"Malmequer",
+"Virginia",
+"Primeiro psalmo de David",
+"Segundo psalmo de David",
+"Cantico dos Canticos de Salomão",
+"Sonho",
+"Ouviste-me não sei quê",
     ]
 
     # Cria a lista removendo as duplicatas mantendo a ordem para o relatório visual
@@ -64,7 +109,7 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
         if "FIM" in corpo:
             corpo = corpo.split("FIM")[0].strip()
             
-        poemas_estruturados.append([titulo.upper(), "Guerra Junqueiro", corpo])
+        poemas_estruturados.append([titulo.upper(), "Joao de Deus", corpo])
         titulos_encontrados_normalizados.add(titulo.lower())
         i += 2
 
@@ -89,7 +134,7 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
 
 # --- Execução do Script ---
 ficheiro_entrada = "EU.txt"
-ficheiro_saida = "poemas_guerra_junqueiro.csv"
+ficheiro_saida = "poemas_joao_de_deus.csv"
 
 try:
     processar_txt_poemas(ficheiro_entrada, ficheiro_saida)
