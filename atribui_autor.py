@@ -17,97 +17,22 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
 
 
     titulos_alvo = [
-"POEMA - V",
-"POEMA - NIRVANA",
-"POEMA - NIRVANA - D",
-"POEMA - PSICHÉ",
-"POEMA - PSICHÉ - V",
-"POEMA - IMAGEM DA DOR",
-"POEMA - VANA",
-"POEMA - HARMONIAS DE UMA NOITE DE VERÃO",
-"POEMA - HARMONIAS DE UMA NOITE DE VERÃO - C",
-"POEMA - A SELIA DO LEÃO",
-"POEMA - MEDITAÇÕES - I",
-"POEMA - MEDITAÇÕES - D",
-"POEMA - LUBRICUS ANGUIS",
-"POEMA - LUBRICUS ANGUIS - D",
-"POEMA - DESILUDIDO",
-"POEMA - NUA E CRUA",
-"POEMA - NUA E CRUA - D",
-"POEMA - NUA E CRUA - C",
-"POEMA - AMÉM!",
-"POEMA - FETICHISMO",
-"POEMA - DEUS IMPASSÍVEL",
-"POEMA - VAE VICTIS!",
-"POEMA - DIÁLOGOS - I",
-"POEMA - GREEN SPOT",
-"POEMA - GREEN SPOT - D",
-"POEMA - PÉLAGO INVISÍVEL",
-"POEMA - HINO A CÓLERA",
-"POEMA - BÁLSAMO NOS PRANTOS",
-"POEMA - BÁLSAMO NOS PRANTOS - C",
-"POEMA - PAPÉIS-VELHOS",
-"POEMA - UM FRAGMENTO - I",
-"POEMA - UM FRAGMENTO - V",
-"POEMA - A SOMBRA DA MORTE",
-"POEMA - VERBO LIBERTADOR",
-"POEMA - SOBRE A MORTE DE JOSÉ BONIFÁCIO",
-"POEMA - ONDAS... - I",
-"POEMA - ONDAS... - V",
-"POEMA - AMOR CRIADOR",
-"POEMA - AMOR CRIADOR - C",
-"POEMA - PAZ ENTRE OS HOMENS",
-"POEMA - CAUCHEMAR",
-"POEMA - MAZZEPA",
-"POEMA - BANZO",
-"POEMA - BANZO - V",
-"POEMA - BANZO - D",
-"POEMA - HORÓSCOPO",
-"POEMA - ÚLTIMO PORTO",
-"POEMA - ÚLTIMO PORTO - D",
-"POEMA - CÍTERA",
-"POEMA - ODE PARNASIANA",
-"POEMA - ODE PARNASIANA - D",
-"POEMA - BEIJOS DO CÉU",
-"POEMA - MISSA DA RESSURREIÇÃO",
-"POEMA - MISSA DA RESSURREIÇÃO - D",
-"POEMA - MISSA DA RESSURREIÇÃO - M",
-"POEMA - A UMA CANTORA",
-"POEMA - A UMA CANTORA - C",
-"POEMA - NUVEM BRANCA",
-"POEMA - NUVEM BRANCA - D",
-"POEMA - IXION",
-"POEMA - CONCHITA",
-"POEMA - JÉSSICA",
-"POEMA - ZULMIRA",
-"POEMA - ANIMA CHLORIDIS",
-"POEMA - SONHO TURCO",
-"POEMA - SONHO TURCO - V",
-"POEMA - SONHO TURCO - M",
-"POEMA - NO ANIVERSÁRIO DE UM POETA",
-"POEMA - NO ANIVERSÁRIO DE UM POETA - C",
-"POEMA - SOZINHA",
-"POEMA - PRIMEIRAS VIGÍLIAS",
-"POEMA - PRIMEIRAS VIGÍLIAS - D",
-"POEMA - A FLOR AZUL",
-"POEMA - VÉSPER",
-"POEMA - VÉSPER - D",
-"POEMA - POEMA DA NOITE",
-"POEMA - TRISTEZA DE MOMO",
-"POEMA - EVITERNO AMOR",
-"POEMA - DOLORES",
-"POEMA - FILOMELA",
-"POEMA - MOFA E DESPEITO",
-"POEMA - EMISSÁRIO DOS DEUSES",
-"POEMA - O VELHO E A TABELIÃO",
-"POEMA - A ESTÁTUA DE JÚPITER",
-"POEMA - A ESTÁTUA DE JÚPITER - L",
-"POEMA - VICTOR HUGO",
-"POEMA - EPOPÉIA DO LEÃO",
-"POEMA - EPOPÉIA DO LEÃO - V",
-"POEMA - EPOPÉIA DO LEÃO - C",
-"POEMA - EPOPÉIA DO LEÃO - VI",
-"POEMA - BIOGRAFIA"
+"POEMA - D",
+"POEMA - LUZ MEDITERRÂNE",
+"POEMA - LUZ MEDITERRÂNE - C",
+"POEMA - LUZ MEDITERRÂNE - M",
+"POEMA - HISTÓRIEUM LM",
+"POEMA - HISTÓRIEUM LM - IIIC",
+"POEMA - FELICID DE",
+"POEMA - FELICID DE - I",
+"POEMA - FELICID DE - C",
+"POEMA - FELICID DE - IM",
+"POEMA - FELICID DE - VIV",
+"POEMA - FELICID DE - D",
+"POEMA - FELICID DE - DI",
+"POEMA - POEM SIN C B DOS",
+"POEMA - POEM SIN C B DOS - D",
+
     ]
 
     # Cria a lista removendo as duplicatas mantendo a ordem para o relatório visual
@@ -135,7 +60,7 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
         if "FIM" in corpo:
             corpo = corpo.split("FIM")[0].strip()
             
-        poemas_estruturados.append([titulo.upper(), "Raimundo Correia", corpo])
+        poemas_estruturados.append([titulo.upper(), "Raul de Leoni", corpo])
         titulos_encontrados_normalizados.add(titulo.lower())
         i += 2
 
@@ -160,7 +85,7 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
 
 # --- Execução do Script ---
 ficheiro_entrada = "EU.txt"
-ficheiro_saida = "aleluias_raimundo_correia.csv"
+ficheiro_saida = "poemas_raul_de_leoni.csv"
 
 try:
     processar_txt_poemas(ficheiro_entrada, ficheiro_saida)
