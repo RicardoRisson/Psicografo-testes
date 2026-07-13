@@ -17,22 +17,67 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
 
 
     titulos_alvo = [
-"POEMA - D",
-"POEMA - LUZ MEDITERRÂNE",
-"POEMA - LUZ MEDITERRÂNE - C",
-"POEMA - LUZ MEDITERRÂNE - M",
-"POEMA - HISTÓRIEUM LM",
-"POEMA - HISTÓRIEUM LM - IIIC",
-"POEMA - FELICID DE",
-"POEMA - FELICID DE - I",
-"POEMA - FELICID DE - C",
-"POEMA - FELICID DE - IM",
-"POEMA - FELICID DE - VIV",
-"POEMA - FELICID DE - D",
-"POEMA - FELICID DE - DI",
-"POEMA - POEM SIN C B DOS",
-"POEMA - POEM SIN C B DOS - D",
-
+"APARIÇÃO NAS ÁGUAS - I",
+"APARIÇÃO NAS ÁGUAS - II",
+"APARIÇÃO NAS ÁGUAS - III",
+"APARIÇÃO NAS ÁGUAS - IV",
+"APARIÇÃO NAS ÁGUAS - V",
+"APARIÇÃO NAS ÁGUAS - VI",
+"VAPOROSA - I",
+"III - O ÍDOLO - A MANHÃES DE CAMPOS",
+"IV - TRINDADES - AO DR FERREIRA DE ARAÚJO",
+"V - CALMA NO MAR - IMITAÇÃO DE MIÇKIEWICZ",
+"VI - TENEBROSA",
+"VII - O COLAR",
+"VIII - À SOMBRA DAS ÁRVORES",
+"IX - QUADRO ANTIGO - A TEÓFILO DIAS",
+"X - O PRIMEIRO BEIJO",
+"XI - VISÃO DAS RUÍNAS - A L. NICOLI.",
+"XII - INTERIOR - A TOMÁS ALVES FILHO",
+"XIII - ONDULAÇÕES",
+"XIV - TRIUNFO SATÂNICO - A PEDRO PAULO DO AMARAL.",
+"XV - NA ALAMEDA - A MARIANO DE OLIVEIRA",
+"XVI - TOILETTE LÍRICO - A BELISÁRIO DE SOUZA",
+"S1",
+"S2",
+"XX - MÍSTICA - A JOAQUIM MALDONADO - I",
+"XX - MÍSTICA - A JOAQUIM MALDONADO - II",
+"XX - MÍSTICA - A JOAQUIM MALDONADO - III",
+"XXI - AO SOL POENTE - A ARTUR AZEVEDO",
+"XXII",
+"XXIII",
+"XXIV - TORTURAS DO IDEAL - A JOSÉ DO PATROCÍNIO - I",
+"XXIV - TORTURAS DO IDEAL - A JOSÉ DO PATROCÍNIO - II",
+"XXIV - TORTURAS DO IDEAL - A JOSÉ DO PATROCÍNIO - III",
+"XXIV - TORTURAS DO IDEAL - A JOSÉ DO PATROCÍNIO - IV",
+"XXIV - TORTURAS DO IDEAL - A JOSÉ DO PATROCÍNIO - V",
+"VI - Vozes no ar",
+"VII",
+"VIII",
+"IX",
+"X - I",
+"X - II",
+"X - III",
+"X - IV",
+"X - V",
+"X - XI",
+"X - XII",
+"X - XIII",
+"XXV - A FONTOURA XAVIER",
+"XXVI - O MÊS DE OUTUBRO - A ARTUR AZEVEDO",
+"XXVII - LUZ NOVA - A A. BARREIROS - I",
+"XXVII - LUZ NOVA - A A. BARREIROS - II",
+"XXVII - LUZ NOVA - A A. BARREIROS - III",
+"XXVII - LUZ NOVA - A A. BARREIROS - IV",
+"XXVII - LUZ NOVA - A A. BARREIROS - V",
+"XXVII - LUZ NOVA - A A. BARREIROS - VI",
+"XXVII - LUZ NOVA - A A. BARREIROS - VII",
+"XXVII - LUZ NOVA - A A. BARREIROS - VIII",
+"XXVII - LUZ NOVA - A A. BARREIROS - IX",
+"XXVII - LUZ NOVA - A A. BARREIROS - X",
+"XXVII - LUZ NOVA - A A. BARREIROS - XI",
+"XXVII - LUZ NOVA - A A. BARREIROS - XII",
+"XXVII - LUZ NOVA - A A. BARREIROS - XIII"
     ]
 
     # Cria a lista removendo as duplicatas mantendo a ordem para o relatório visual
@@ -60,7 +105,7 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
         if "FIM" in corpo:
             corpo = corpo.split("FIM")[0].strip()
             
-        poemas_estruturados.append([titulo.upper(), "Raul de Leoni", corpo])
+        poemas_estruturados.append([titulo.upper(), "Alberto de Oliveira", corpo])
         titulos_encontrados_normalizados.add(titulo.lower())
         i += 2
 
@@ -85,7 +130,7 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
 
 # --- Execução do Script ---
 ficheiro_entrada = "EU.txt"
-ficheiro_saida = "poemas_raul_de_leoni.csv"
+ficheiro_saida = "poemas_alberto_de_oliveira.csv"
 
 try:
     processar_txt_poemas(ficheiro_entrada, ficheiro_saida)
