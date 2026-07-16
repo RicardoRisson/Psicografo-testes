@@ -17,23 +17,13 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
 
 
     titulos_alvo = [
-"POEMA - INTRODUÇÃO - Parte I",
-"POEMA - INTRODUÇÃO - Parte II",
-"POEMA - INTRODUÇÃO - Parte III",
-"POEMA - INTRODUÇÃO - Parte IV",
-"POEMA - INTRODUÇÃO - Parte V",
-"POEMA - INTRODUÇÃO - Parte VI",
-"POEMA - INTRODUÇÃO - Parte VII",
-"POEMA - INTRODUÇÃO - Parte VIII",
-"POEMA - INTRODUÇÃO - Parte IX",
-"POEMA - INTRODUÇÃO - Parte X",
-"POEMA - INTRODUÇÃO - Parte XI",
-"POEMA - INTRODUÇÃO - Parte XII",
-"POEMA - INTRODUÇÃO - Parte XIII",
-"POEMA - INTRODUÇÃO - Parte XIV",
-"POEMA - INTRODUÇÃO - Parte XV",
-"POEMA - INTRODUÇÃO - Parte XVI",
-"POEMA - INTRODUÇÃO - Parte XVII"]
+"BLOCO 1",
+"BLOCO 2",
+"BLOCO 3",
+"BLOCO 4",
+"BLOCO 5",
+"BLOCO 6",
+]
 
     # Cria a lista removendo as duplicatas mantendo a ordem para o relatório visual
     titulos_unicos = []
@@ -60,7 +50,7 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
         if "FIM" in corpo:
             corpo = corpo.split("FIM")[0].strip()
             
-        poemas_estruturados.append([titulo.upper(), "Juvenal Galeno", corpo])
+        poemas_estruturados.append([titulo.upper(), "Souza Caldas", corpo])
         titulos_encontrados_normalizados.add(titulo.lower())
         i += 2
 
@@ -85,7 +75,7 @@ def processar_txt_poemas(caminho_txt, caminho_csv):
 
 # --- Execução do Script ---
 ficheiro_entrada = "EU.txt"
-ficheiro_saida = "poemas_juvenal_galeno.csv"
+ficheiro_saida = "textos_souza_caldas.csv"
 
 try:
     processar_txt_poemas(ficheiro_entrada, ficheiro_saida)
